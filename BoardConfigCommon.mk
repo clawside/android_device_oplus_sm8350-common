@@ -14,10 +14,16 @@
 # limitations under the License.
 #
 
+
+COMMON_PATH := device/oplus/sm8350-common
+BOARD_VENDOR := oplus
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 COMMON_PATH := device/oplus/sm8350-common
+
+# APEX
+OVERRIDE_TARGET_FLATTEN_APEX := true
 
 # A/B
 AB_OTA_UPDATER := true
