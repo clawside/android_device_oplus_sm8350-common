@@ -345,6 +345,11 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
 
 # NFC
+ifeq ($(OPLUS_DEVICE_USES_ST21_NFC),true)
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.2-service.st \
+    android.hardware.secure_element@1.2-service-gto
+else
 PRODUCT_SOONG_NAMESPACES += \
     vendor/nxp/opensource/sn100x
 
@@ -353,6 +358,7 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras \
     vendor.nxp.hardware.nfc@2.0-service \
     Tag
+endif
 
 # OMX
 PRODUCT_PACKAGES += \
