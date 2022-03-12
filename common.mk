@@ -464,8 +464,13 @@ PRODUCT_PACKAGES += \
     vndservicemanager
 
 # Vibrator
+ifeq ($(OPLUS_DEVICE_USES_QTI_VIBRATOR),true)
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.vibrator.service
+else
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service.oplus
+endif
 
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
